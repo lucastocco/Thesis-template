@@ -17,7 +17,18 @@ biber $DIR/$NAME
 makeindex -s ./$NAME.ist -t ./$NAME.glg -o ./$NAME.gls ./$NAME.glo
 makeindex -s ./$NAME.ist -t ./$NAME.alg -o ./$NAME.acr ./$NAME.acn
 
+makeglossaries $DIR/$NAME
+
 # Due volte because Latex
+
+pdflatex -output-directory=$DIR $NAME
+biber $DIR/$NAME
+makeindex -s ./$NAME.ist -t ./$NAME.glg -o ./$NAME.gls ./$NAME.glo
+makeindex -s ./$NAME.ist -t ./$NAME.alg -o ./$NAME.acr ./$NAME.acn
+
+makeglossaries $DIR/$NAME
+
+#tre volte because glossario
 
 pdflatex -output-directory=$DIR $NAME
 biber $DIR/$NAME
@@ -40,6 +51,6 @@ rm $DIR/*.ist $DIR/*.lof $DIR/*.lot $DIR/*.run.xml $DIR/*.toc
 # Per mantenere i log commentare la linea seguente
 rm $DIR/*.blg  $DIR/*.log
 
-evince $DIR/$NAME.pdf
+sudo evince $DIR/*.pdf
 
 echo ---------------------------- END -----------------------------
