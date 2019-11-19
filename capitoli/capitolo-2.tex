@@ -22,6 +22,16 @@
 %- peculiarità\\
 %- differenze con la concorrenza\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h]
+\includegraphics[width=0.9\textwidth]{workforce-management.png}
+\centering
+\caption{Concetti di \textit{Workforce Management}.} 
+\source{\href{https://www.replgroup.com/}{Replgroup.com}}
+\label{fig:workforce-management}
+\end{figure}
+
+
 \subsection{Aspettative aziendali}
 %definizione e classificazione degli obiettivi da raggiungere
 
@@ -32,7 +42,7 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 \subsubsection*{DigitalSnapshots}
 \paragraph*{Obiettivi Minimi}
 \begin{itemize}
-\item Ristrutturazione della base di dati MySQL e nella parte Model di CakePHP;
+\item Ristrutturazione della base di dati MySQL e della parte Model di CakePHP;
 \item Realizzazione moduli API e logica;
 \item Creazione interfaccia utente del cruscotto delle analisi; 
 \item Stesura della documentazione su quanto realizzato.
@@ -40,7 +50,7 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 
 \paragraph*{Obiettivi Opzionali}
 \begin{itemize}
-\item Realizzazione di un modulo "wizard" per la configurazione rapida del prodotto;
+\item Realizzazione di un modulo \textit{wizard} per la configurazione rapida del prodotto;
 \item Implementazione di una gerarchia di utenti, con livelli di privilegi differenti.
 \end{itemize}
 
@@ -55,7 +65,8 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 
 \paragraph*{Obiettivi Opzionali}
 \begin{itemize}
-\item Realizzazione di un modulo per la configurazione dei ruoli degli utenti.
+\item Realizzazione di un modulo per la configurazione dei ruoli degli utenti;
+\item Implementazione di un algoritmo per la pianificazione intelligente della forza lavoro a disposizione.
 \end{itemize}
 
 \section{Vincoli}
@@ -67,11 +78,33 @@ L'orario lavorativo stabilito corrisponde all'orario di lavoro aziendale: dal Lu
 Oltre a questo vincolo del monte orario, mi sono trovato a toccare con mano la pianificazione Scrum: all'inizio di ogni Sprint, infatti, ho pianificato le attività da portare a termine entro le successive due settimane, durata di ogni singolo Sprint.//
 Il progetto \textbf{DigitalSnapshots} inoltre, aveva una scadenza di consegna al cliente che combaciava con la fine del secondo Sprint, per cui il ritmo lavorativo è stato abbastanza elevato per non eccedere tale data.
 
+\begin{figure}[h]
+\includegraphics[width=\textwidth , keepaspectratio]{plan-vs-reality.jpg}
+\centering
+\caption{Rischi di pianificazione nell'attività di codifica.} 
+\source{\href{https://www.devbridge.com/}{Devbridge.com}}
+\label{fig:plan-vs-reality}
+\end{figure}
+
 \subsection{Vincoli metodologici}
 %- monday meeting\\
 %- interazione diretta con il cliente\\
 %- scrum\\
 %- Vincoli metodologici personali
+Al mio arrivo in azienda, il progetto già presentava un'architettura e una metodologia di lavoro consolidate.
+Data la mia poca esperienza con il \textit{framework} Scrum, in accordo unanime tra tutto il team, abbiamo deciso di mantenere la durata degli Sprint pari a due settimane lavorative, ma di inserire a metà di questo lasso di tempo una riunione che aveva la funzione di monitorare l'andamento dello sviluppo e di rilevarne eventuali criticità. I \textit{meeting} di \textit{Sprint Review} erano spesso presenziati anche dal comparto tecnico o dalle persone di riferimento delle aziende \textit{stakeholder}, così da avere un \textit{feedback} su quanto fatto finora pressoché istantaneo.
+A questi inoltre, si aggiunge la politica aziendale del \textit{Monday Meeting}, ovvero una assemblea, effettuata ogni due Lunedì, nel corso del quale si aggiornano i colleghi sull'andamento dei progetti in corso.
+Nonostante avessi carta bianca sulla modalità di sviluppo del codice, mi sono posto dei vincoli da rispettare, affinchè l'attività risultasse il più efficiente ed efficace possibile.\\
+Innanzitutto, ho scelto di seguire un approccio di sviluppo differente da quello classico, ovvero il \textit{TDD}. Acronimo di \textit{Test Driven Development}, consiste nel rovesciare il normale metodo di programmazione, in cui prima si codifica e poi si effettuano i test, obbligando così lo sviluppatore a scrivere il codice in base ai test che sono stati realizzati in precedenza.
+\begin{figure}[h]
+\includegraphics[width=\textwidth , keepaspectratio]{TestDrivenDevelopment.png}
+\centering
+\caption{Test Driven Development.} 
+\source{\href{https://www.andplus.com/}{Andplus.com}}
+\label{fig:tdd}
+\end{figure}
+In secondo luogo, ho configurato, tramite il \textit{framework} Jenkins, una \textit{pipeline} per la \textit{continuous integration} che eseguisse in maniera automatica i test precedentemente codificati.
+Infine adottato il \textit{framework} \textbf{Swagger.io} per la documentazione delle chiamate \textit{API}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vincoli tecnologici}
 %stack tecnologico definito in avvio di progetto 
@@ -85,9 +118,24 @@ Il progetto \textbf{AWMS} si basa su tecnologie ampiamente utilizzate in azienda
 \end{itemize}
 \textbf{DigitalSnapshots} invece si differenzia da AWMS in quanto sostituisce \textbf{MySQL} a \textit{PostgreSQL} e \textbf{AngularJS} ad \textit{Angular2+}.\\
 Questa differenza di comparto tecnico è giustificata dal fatto che, mentre AWMS verrà seguito da \AD{} (nello specifico, da \textbf{I4.0Saas} dal 2020) per tutto il suo ciclo di vita, \textbf{DigitalSnapshots} avrà un destino differente: le fasi di progettazione e sviluppo sono a carico di \AD{}, mentre la fase di manutenzione del codice sarà eseguita dal reparto tecnico di Electrolux, committente del progetto.\\
-Dai vincoli metodologici personali, deriva l'utilizzo dei \textit{framework} \textit{Jenkins}, per l'implementazione della \textit{continous integration}, e \textit{PHPUnit} e \textit{Jasmine} per l'esecuzione automatica dei test d'unità, rispettivamente per il linguaggio di programmazione PHP e Typescript.
+Dai vincoli metodologici personali, deriva l'utilizzo dei \textit{framework} \textit{Jenkins}, per l'implementazione della \textit{continous integration}, e \textit{PHPUnit} e \textit{Jasmine} per l'esecuzione automatica dei test d'unità ed integrazione, rispettivamente per i linguaggi di programmazione PHP e Typescript.
 \section{Aspettative personali}
 %- come ho conosciuto AD\\
 %- perchè AD?\\
 %- aspettative sul lavorare in una startup, imparare il way of working\\
+Durante l'ultimo anno del mio percorso accademico, ho avuto l'opportunità di partecipare a \textit{Stage-IT}, un evento organizzato da Assindustria Venetocentro in collaborazione con l'Università di Padova, con lo scopo di fornire un punto di contatto tra gli studenti e le aziende del settore informatico presenti nel territorio.
+E\` proprio durante questo incontro che ho conosciuto \AD , e subito sono rimasto intrigato dalla sua dinamicità e propensione all'innovazione, nonché dai progetti ambiziosi e dai valori aziendali nei quali mi identifico.\\
+\begin{figure}[h]
+\includegraphics[width=\textwidth]{startup.jpg}
+\centering
+\caption{Le molte sfaccettature delle start-up.} 
+\source{\href{http://orizzonti.tv/}{Orizzonti.tv}}
+\label{fig:tdd}
+\end{figure}
+Le mie aspettative riguardo a questa attività di stage potevano essere riassunte in tre punti fondamentali:
+\begin{itemize}
+\item Innanzitutto, vedevo questo tirocinio come un banco di prova su cui testare le conoscenze acquisite durante il percorso universitario e la mia capacità di apprendimento di tecnologie a me perlopiù sconosciute;
+\item In secondo luogo, ero smanioso di collaborare con aziende dal marchio rinomato, come Electrolux e Safilo.
+\item Infine, ma non per questo meno importante, desideravo imparare il \textit{way of working} da persone con esperienza nel settore, perchè credo che conoscere gli strumenti e saperli utilizzare al meglio sia fondamentale per uno sviluppatore, specie se inesperto.
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
