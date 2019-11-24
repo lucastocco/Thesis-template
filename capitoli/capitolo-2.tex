@@ -5,22 +5,42 @@
 %**************************************************************
 \chapter{Obiettivi dello stage}
 \label{cap:obiettivi-stage}
-%\intro{Brevissima introduzione al capitolo}\\
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lo stage nella strategia aziendale}
 %Importanza dello stage in AzzurroDigitale
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Vantaggi Aziendali}
+\subsection{Vantaggi aziendali}
 %Vantaggi per l'azienda: \\
 %- partecipazione a stageIT consente all'azienda di entrare in contatto con i laureandi\\
 %- formazione di personale giovane e selezionato\\
 %- nuove idee e punti di vista \\
+L'attività di stage in azienda è uno strumento importante, in quanto consente di iniziare un percorso per l'inserimento di nuovo personale nel contesto lavorativo.\\
+Nonostante il tirocinio risulti costare molto impegno, data l'inesperienza e la necessità di formare lo \textit{stagiaire}, questo spesso porta all'azienda nuove idee e punti di vista.\\
+Il punto di vista di una persona esterna all'ambiente lavorativo, a maggior ragione se si tratta di un giovane laureando che tendenzialmente è ancora propenso ad aprirsi a nuovi orizzonti e a cercare nuovi approcci ai problemi, è una grande opportunità per un'azienda, perchè consente di sperimentare ed analizzare nuove tecnologie o nuovi progetti, senza rischiare di sottrarre troppo tempo al reparto di sviluppo.\\
+La collaborazione con l'ambiente universitario e i valori intrinsechi di \AD{} hanno portato ad un utilizzo piuttosto comune di questa pratica, puntando sulla formazione e sulla crescita di queste risorse, così da poter arricchire i propri reparti lavorativi.
+
+\begin{figure}[h]
+\includegraphics[width=0.9\textwidth, keepaspectratio]{internship-businessstudent-com.png}
+\centering
+\caption{Caratteristiche dell'attività di tirocinio.} 
+\source{\href{https://www.businessstudent.com/}{BusinessStudent.com}}
+\label{fig:internship}
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Presentazione dei progetti}
 %descrizione generale dei progetti: \\
 %- le idee che stanno dietro a questi\\
 %- peculiarità\\
 %- differenze con la concorrenza\\
+Durante la mia attività di stage in \AD{} ho avuto modo di lavorare su due progetti: \textbf{DigitalSnapshots} e \textbf{AWMS}.\\
+DigitalSnapshots nasce dall'idea di fornire ai manager aziendali, uno strumento che facilitasse la gestione delle attività in corso nei vari stabilimenti. Esso permette all'utente di visualizzare tutte le attività in un'unica schermata, rendendo così più semplice il confronto e la valutazione. 
+L'attività di stage a me proposta consisteva nel realizzare un modulo di analisi delle attività inserite, con la possibilità di filtraggio dei dati da analizzare, di selezione della tipologia di grafico da visualizzare, e di affiancamento di più grafici, così da rendere più efficaci i confronti effettuati. \\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+L'idea che sta alla base di AWMS, invece, consiste nel fornire uno strumento per la gestione della manodopera all'interno degli stabilimenti produttivi delle aziende.
+Questo significa inserire la persona giusta, nella postazione giusta, al momento giusto, così da massimizzare l'efficienza del reparto e migliorare la qualità del lavoro.
+Questa piattaforma è innovativa in quanto sviluppata ponendo l'attenzione sulle persone anzichè sui mezzi di produzione. Per effettuare la pianificazione quotidiana, infatti, l'algoritmo interno di AWMS terrà conto sia delle abilità di ogni persona disponibile, visitando lo storico delle mansioni svolte in passato da quest'ultime e controllando se siano in possesso delle certificazioni adeguate per svolgere l'attività che si sta andando a pianificare (si pensi ad esempio all'attività di carrellista, che necessita di un'apposita certificazione), che delle possibili disabilità o indisposizioni delle stesse.\\
+In questo progetto, mi è stata assegnato il compito di realizzare un modulo per l'esportazione della pianificazione, sia in formato PDF, sia sotto forma di foglio elettronico.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
@@ -66,7 +86,7 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 \paragraph*{Obiettivi Opzionali}
 \begin{itemize}
 \item Realizzazione di un modulo per la configurazione dei ruoli degli utenti;
-\item Implementazione di un algoritmo per la pianificazione intelligente della forza lavoro a disposizione.
+\item Implementazione di un migliore algoritmo di \textit{machine learning} per la pianificazione intelligente della forza lavoro a disposizione.
 \end{itemize}
 
 \section{Vincoli}
@@ -75,7 +95,7 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 
 La durata complessiva dell'attività di stage è stata di 304 ore, distribuite, in accordo con il tutor aziendale, nell'arco di 8 settimane, ognuna delle quali aveva un monte orario di circa 40 ore. \\
 L'orario lavorativo stabilito corrisponde all'orario di lavoro aziendale: dal Lunedì al Venerdi, dalle ore 9:00 alle 18:00.\\
-Oltre a questo vincolo del monte orario, mi sono trovato a toccare con mano la pianificazione Scrum: all'inizio di ogni Sprint, infatti, ho pianificato le attività da portare a termine entro le successive due settimane, durata di ogni singolo Sprint.//
+Oltre a questo vincolo del monte orario, mi sono trovato a toccare con mano la pianificazione Scrum: all'inizio di ogni Sprint, infatti, ho pianificato le attività da portare a termine entro le successive due settimane, durata di ogni singolo Sprint.\\
 Il progetto \textbf{DigitalSnapshots} inoltre, aveva una scadenza di consegna al cliente che combaciava con la fine del secondo Sprint, per cui il ritmo lavorativo è stato abbastanza elevato per non eccedere tale data.
 
 \begin{figure}[h]
@@ -103,8 +123,7 @@ Innanzitutto, ho scelto di seguire un approccio di sviluppo differente da quello
 \source{\href{https://www.andplus.com/}{Andplus.com}}
 \label{fig:tdd}
 \end{figure}
-In secondo luogo, ho configurato, tramite il \textit{framework} Jenkins, una \textit{pipeline} per la \textit{continuous integration} che eseguisse in maniera automatica i test precedentemente codificati.
-Infine adottato il \textit{framework} \textbf{Swagger.io} per la documentazione delle chiamate \textit{API}.
+In secondo luogo, ho configurato una \textit{pipeline} per la \textit{continuous integration} che eseguisse in maniera automatica i test precedentemente codificati e che caricasse nella \textit{repository} di lavoro, il codice da me realizzato.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vincoli tecnologici}
 %stack tecnologico definito in avvio di progetto 
@@ -124,7 +143,7 @@ Dai vincoli metodologici personali, deriva l'utilizzo dei \textit{framework} \te
 %- perchè AD?\\
 %- aspettative sul lavorare in una startup, imparare il way of working\\
 Durante l'ultimo anno del mio percorso accademico, ho avuto l'opportunità di partecipare a \textit{Stage-IT}, un evento organizzato da Assindustria Venetocentro in collaborazione con l'Università di Padova, con lo scopo di fornire un punto di contatto tra gli studenti e le aziende del settore informatico presenti nel territorio.
-E\` proprio durante questo incontro che ho conosciuto \AD , e subito sono rimasto intrigato dalla sua dinamicità e propensione all'innovazione, nonché dai progetti ambiziosi e dai valori aziendali nei quali mi identifico.\\
+\`E proprio durante questo incontro che ho conosciuto \AD , e subito sono rimasto intrigato dalla sua dinamicità e propensione all'innovazione, nonché dai progetti ambiziosi e dai valori aziendali nei quali mi identifico.\\
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{startup.jpg}
 \centering
@@ -135,7 +154,7 @@ E\` proprio durante questo incontro che ho conosciuto \AD , e subito sono rimast
 Le mie aspettative riguardo a questa attività di stage potevano essere riassunte in tre punti fondamentali:
 \begin{itemize}
 \item Innanzitutto, vedevo questo tirocinio come un banco di prova su cui testare le conoscenze acquisite durante il percorso universitario e la mia capacità di apprendimento di tecnologie a me perlopiù sconosciute;
-\item In secondo luogo, ero smanioso di collaborare con aziende dal marchio rinomato, come Electrolux e Safilo.
-\item Infine, ma non per questo meno importante, desideravo imparare il \textit{way of working} da persone con esperienza nel settore, perchè credo che conoscere gli strumenti e saperli utilizzare al meglio sia fondamentale per uno sviluppatore, specie se inesperto.
+\item In secondo luogo, ero desideroso di collaborare con aziende dal marchio rinomato;
+\item Infine, ma non per questo meno importante, desideravo imparare il \textit{way of working} da persone con esperienza nel settore dell'\textit{IT}, perchè credo che conoscere gli strumenti e saperli utilizzare al meglio sia fondamentale per uno sviluppatore, specie se inesperto.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
