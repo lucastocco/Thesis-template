@@ -18,7 +18,7 @@ Il punto di vista di una persona esterna all'ambiente lavorativo, a maggior ragi
 La collaborazione con l'ambiente universitario e i valori intrinsechi di \AD{} hanno portato ad un utilizzo piuttosto comune di questa pratica, puntando sulla formazione e sulla crescita di queste risorse, così da poter arricchire i propri reparti lavorativi.
 
 \begin{figure}[h]
-\includegraphics[width=0.9\textwidth, keepaspectratio]{internship-businessstudent-com.png}
+\includegraphics[width=\textwidth, keepaspectratio]{internship-businessstudent-com.png}
 \centering
 \caption{Caratteristiche dell'attività di tirocinio.} 
 \source{\href{https://www.businessstudent.com/}{BusinessStudent.com}}
@@ -33,6 +33,23 @@ La collaborazione con l'ambiente universitario e i valori intrinsechi di \AD{} h
 %- peculiarità\\
 %- differenze con la concorrenza\\
 Durante la mia attività di stage in \AD{} ho avuto modo di lavorare su due progetti: \textbf{DigitalSnapshots} e \textbf{AWMS}.\\
+Entrambi i prodotti si basano su un'architettura di tipo \textit{SaaS}.
+I vantaggi di questa struttura sono molteplici: 
+\begin{itemize}
+\item \textbf{Accesso ad applicazioni sofisticate:} l'utilizzatore finale infatti non dovrà acquistare, installare, aggiornare o gestire nessun tipo di \textit{hardware}, \textit{middleware} o \textit{software};
+\item \textbf{Pagamento solo per le risorse utilizzate:} l'architettura \textit{SaaS} verticale è infatti molto modulare, e consente di fatturare solamente i servizi realmente utilizzati, tralasciando invece i servizi di cui non si usufruisce;
+\item \textbf{Uso di software client gratuito:} essendo una soluzione completamente gestita, non vi è il bisogno di installare client o applicazioni nel PC dell'utilizzatore. \`E necessario solamente un computer con un \textit{web browser} installato per poter accedere ai servizi erogati;
+\item \textbf{Accesso ai dati da qualunque luogo:} con i dati archiviati nel \textit{cloud}, gli utenti possono accedere alle informazioni da qualsiasi dispositivo connesso ad internet. Il \textit{cloud} inoltre consente di non perdere i dati in caso di problemi al dispositivo fisico, garantendo così il recupero di tutte le informazioni con facilità.
+\end{itemize}
+
+\begin{figure}[h]
+\includegraphics[width=\textwidth, keepaspectratio]{saas-microsoft.png}
+\centering
+\caption{Struttura di un'architettura SaaS.} 
+\source{\href{https://www.azure.microsoft.com/}{Microsoft.com}}
+\label{fig:saas-microsoft}
+\end{figure}
+
 DigitalSnapshots nasce dall'idea di fornire ai manager aziendali, uno strumento che facilitasse la gestione delle attività in corso nei vari stabilimenti. Esso permette all'utente di visualizzare tutte le attività in un'unica schermata, rendendo così più semplice il confronto e la valutazione. 
 L'attività di stage a me proposta consisteva nel realizzare un modulo di analisi delle attività inserite, con la possibilità di filtraggio dei dati da analizzare, di selezione della tipologia di grafico da visualizzare, e di affiancamento di più grafici, così da rendere più efficaci i confronti effettuati. \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -40,11 +57,11 @@ L'attività di stage a me proposta consisteva nel realizzare un modulo di analis
 L'idea che sta alla base di AWMS, invece, consiste nel fornire uno strumento per la gestione della manodopera all'interno degli stabilimenti produttivi delle aziende.
 Questo significa inserire la persona giusta, nella postazione giusta, al momento giusto, così da massimizzare l'efficienza del reparto e migliorare la qualità del lavoro.
 Questa piattaforma è innovativa in quanto sviluppata ponendo l'attenzione sulle persone anzichè sui mezzi di produzione. Per effettuare la pianificazione quotidiana, infatti, l'algoritmo interno di AWMS terrà conto sia delle abilità di ogni persona disponibile, visitando lo storico delle mansioni svolte in passato da quest'ultime e controllando se siano in possesso delle certificazioni adeguate per svolgere l'attività che si sta andando a pianificare (si pensi ad esempio all'attività di carrellista, che necessita di un'apposita certificazione), che delle possibili disabilità o indisposizioni delle stesse.\\
-In questo progetto, mi è stata assegnato il compito di realizzare un modulo per l'esportazione della pianificazione, sia in formato PDF, sia sotto forma di foglio elettronico.
+In questo progetto, mi è stato proposto di realizzare un modulo per l'esportazione della pianificazione, sia in formato PDF, sia sotto forma di foglio elettronico.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h]
-\includegraphics[width=0.9\textwidth]{workforce-management.png}
+\includegraphics[width=\textwidth, keepaspectratio]{workforce-management.png}
 \centering
 \caption{Concetti di \textit{Workforce Management}.} 
 \source{\href{https://www.replgroup.com/}{Replgroup.com}}
@@ -96,7 +113,7 @@ Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti 
 La durata complessiva dell'attività di stage è stata di 304 ore, distribuite, in accordo con il tutor aziendale, nell'arco di 8 settimane, ognuna delle quali aveva un monte orario di circa 40 ore. \\
 L'orario lavorativo stabilito corrisponde all'orario di lavoro aziendale: dal Lunedì al Venerdi, dalle ore 9:00 alle 18:00.\\
 Oltre a questo vincolo del monte orario, mi sono trovato a toccare con mano la pianificazione Scrum: all'inizio di ogni Sprint, infatti, ho pianificato le attività da portare a termine entro le successive due settimane, durata di ogni singolo Sprint.\\
-Il progetto \textbf{DigitalSnapshots} inoltre, aveva una scadenza di consegna al cliente che combaciava con la fine del secondo Sprint, per cui il ritmo lavorativo è stato abbastanza elevato per non eccedere tale data.
+Il progetto DigitalSnapshots inoltre, aveva una scadenza di consegna al cliente che combaciava con la fine del secondo Sprint, per cui il ritmo lavorativo è stato abbastanza elevato per non eccedere tale data.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{plan-vs-reality.jpg}
@@ -112,10 +129,11 @@ Il progetto \textbf{DigitalSnapshots} inoltre, aveva una scadenza di consegna al
 %- scrum\\
 %- Vincoli metodologici personali
 Al mio arrivo in azienda, il progetto già presentava un'architettura e una metodologia di lavoro consolidate.
-Data la mia poca esperienza con il \textit{framework} Scrum, in accordo unanime tra tutto il team, abbiamo deciso di mantenere la durata degli Sprint pari a due settimane lavorative, ma di inserire a metà di questo lasso di tempo una riunione che aveva la funzione di monitorare l'andamento dello sviluppo e di rilevarne eventuali criticità. I \textit{meeting} di \textit{Sprint Review} erano spesso presenziati anche dal comparto tecnico o dalle persone di riferimento delle aziende \textit{stakeholder}, così da avere un \textit{feedback} su quanto fatto finora pressoché istantaneo.
-A questi inoltre, si aggiunge la politica aziendale del \textit{Monday Meeting}, ovvero una assemblea, effettuata ogni due Lunedì, nel corso del quale si aggiornano i colleghi sull'andamento dei progetti in corso.
+Data la mia poca esperienza con il \textit{framework} Scrum, in accordo unanime tra tutto il team, abbiamo deciso di mantenere la durata degli Sprint pari a due settimane lavorative, ma di inserire a metà di questo lasso di tempo una riunione che aveva la funzione di monitorare l'andamento dello sviluppo e di rilevarne eventuali criticità. I \textit{meeting} di \textit{Sprint Review} erano spesso presenziati anche dal comparto tecnico o dalle persone di riferimento delle aziende \textit{stakeholder}, così da avere un \textit{feedback} pressoché istantaneo su quanto fatto fino a quel momento.
+A questi inoltre, si aggiunge la politica aziendale del \textit{Monday Meeting}, ovvero una assemblea, effettuata ogni due Lunedì, nel corso del quale si aggiornano i colleghi sull'andamento dei progetti in corso.\\
 Nonostante avessi carta bianca sulla modalità di sviluppo del codice, mi sono posto dei vincoli da rispettare, affinchè l'attività risultasse il più efficiente ed efficace possibile.\\
 Innanzitutto, ho scelto di seguire un approccio di sviluppo differente da quello classico, ovvero il \textit{TDD}. Acronimo di \textit{Test Driven Development}, consiste nel rovesciare il normale metodo di programmazione, in cui prima si codifica e poi si effettuano i test, obbligando così lo sviluppatore a scrivere il codice in base ai test che sono stati realizzati in precedenza.
+In secondo luogo, ho configurato una \textit{pipeline} per la \textit{continuous integration} che eseguisse in maniera automatica i test precedentemente codificati e che caricasse nella \textit{repository} di lavoro, il codice da me realizzato.
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{TestDrivenDevelopment.png}
 \centering
@@ -123,20 +141,19 @@ Innanzitutto, ho scelto di seguire un approccio di sviluppo differente da quello
 \source{\href{https://www.andplus.com/}{Andplus.com}}
 \label{fig:tdd}
 \end{figure}
-In secondo luogo, ho configurato una \textit{pipeline} per la \textit{continuous integration} che eseguisse in maniera automatica i test precedentemente codificati e che caricasse nella \textit{repository} di lavoro, il codice da me realizzato.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Vincoli tecnologici}
 %stack tecnologico definito in avvio di progetto 
 
 Per la realizzazione dei due progetti di stage, ho utilizzato due \textit{stack} tecnologici molto simili, ma per certi aspetti radicalmente differenti.\\
-Il progetto \textbf{AWMS} si basa su tecnologie ampiamente utilizzate in azienda: 
+Il progetto AWMS si basa su tecnologie ampiamente utilizzate in azienda: 
 \begin{itemize}
 \item \textbf{PostgreSQL:} database relazionale, compatibile con il paradigma SQL, che consente all'utente di immagazinare dati anche in formato Json, rendendo di fatto il contenuto delle tabelle molto più dinamico;
 \item \textbf{CakePHP:} \textit{framework} che consente lo sviluppo rapido di applicazioni web con architettura MVC. Grazie alla sua funzione di \textit{ORM}, permette di effettuare operazioni sulle tabelle trattando quest'ultime come oggetti derivanti dal paradigma \textit{OOP};
 \item \textbf{Angular2+:} \textit{framework} per lo sviluppo di applicazioni web \textit{single-page}.
 \end{itemize}
-\textbf{DigitalSnapshots} invece si differenzia da AWMS in quanto sostituisce \textbf{MySQL} a \textit{PostgreSQL} e \textbf{AngularJS} ad \textit{Angular2+}.\\
-Questa differenza di comparto tecnico è giustificata dal fatto che, mentre AWMS verrà seguito da \AD{} (nello specifico, da \textbf{I4.0Saas} dal 2020) per tutto il suo ciclo di vita, \textbf{DigitalSnapshots} avrà un destino differente: le fasi di progettazione e sviluppo sono a carico di \AD{}, mentre la fase di manutenzione del codice sarà eseguita dal reparto tecnico di Electrolux, committente del progetto.\\
+DigitalSnapshots invece si differenzia da AWMS in quanto sostituisce \textbf{MySQL} a \textit{PostgreSQL} e \textbf{AngularJS} ad \textit{Angular2+}.\\
+Questa differenza di comparto tecnico è giustificata dal fatto che, mentre AWMS verrà seguito da \AD{} (nello specifico, da \textbf{I4.0Saas} dal 2020) per tutto il suo ciclo di vita, DigitalSnapshots avrà un destino differente: le fasi di progettazione e sviluppo sono a carico di \AD{}, mentre la fase di manutenzione del codice sarà eseguita dal reparto tecnico di Electrolux, committente del progetto.\\
 Dai vincoli metodologici personali, deriva l'utilizzo dei \textit{framework} \textit{Jenkins}, per l'implementazione della \textit{continous integration}, e \textit{PHPUnit} e \textit{Jasmine} per l'esecuzione automatica dei test d'unità ed integrazione, rispettivamente per i linguaggi di programmazione PHP e Typescript.
 \section{Aspettative personali}
 %- come ho conosciuto AD\\
@@ -149,7 +166,7 @@ Durante l'ultimo anno del mio percorso accademico, ho avuto l'opportunità di pa
 \centering
 \caption{Le molte sfaccettature delle start-up.} 
 \source{\href{http://orizzonti.tv/}{Orizzonti.tv}}
-\label{fig:tdd}
+\label{fig:startup}
 \end{figure}
 Le mie aspettative riguardo a questa attività di stage potevano essere riassunte in tre punti fondamentali:
 \begin{itemize}
