@@ -15,7 +15,7 @@
 L'attività di stage in azienda è uno strumento importante, in quanto consente di iniziare un percorso per l'inserimento di nuovo personale nel contesto lavorativo.\\
 Nonostante il tirocinio risulti costare molto impegno, data l'inesperienza e la necessità di formare lo \textit{stagiaire}, questo spesso porta all'azienda nuove idee e punti di vista.\\
 Il punto di vista di una persona esterna all'ambiente lavorativo, a maggior ragione se si tratta di un giovane laureando che tendenzialmente è ancora propenso ad aprirsi a nuovi orizzonti e a cercare nuovi approcci ai problemi, è una grande opportunità per un'azienda, perchè consente di sperimentare ed analizzare nuove tecnologie o nuovi progetti, senza rischiare di sottrarre troppo tempo al reparto di sviluppo.\\
-La collaborazione con l'ambiente universitario e i valori intrinsechi di \AD{} hanno portato ad un utilizzo piuttosto comune di questa pratica, puntando sulla formazione e sulla crescita di queste risorse, così da poter arricchire i propri reparti lavorativi.
+La collaborazione con l'ambiente universitario e i valori intrinseci di \AD{} hanno portato ad un utilizzo piuttosto comune di questa pratica, puntando sulla formazione e sulla crescita di queste risorse, così da poter arricchire i propri reparti lavorativi.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth, keepaspectratio]{internship-businessstudent-com.png}
@@ -74,37 +74,50 @@ In questo progetto, mi è stato proposto di realizzare un modulo per l'esportazi
 
 Presentati i progetti, si è passati alla fase di definizione dei traguardi da raggiungere durante lo stage.
 Il team di sviluppo ha deciso di suddividere questi obiettivi in due categorie: gli \textbf{obiettivi minimi} si riferiscono a dei compiti il cui completamento risulta essere indispensabile per l'avanzamento del progetto, gli \textbf{obiettivi opzionali} invece, fanno riferimento a delle caratteristiche del prodotto di importanza minore e quindi il loro soddisfacimento non è stato considerato obbligatorio.
+Per ogni progetto, è stato assegnato a ciascun obiettivo un codice identificativo nel formato \textbf{O[tipo][numero]}, dove "tipo" assume il valore dell'iniziale della tipologia di obiettivo in considerazione, mentre con "numero" si intende il numero sequenziale di obiettivo di una determinata tipologia (ad esempio, il secondo obiettivo opzionale avrà la sigla OO2, mentre il primo obiettivo minimo sarà siglato OM1). \\
 Di seguito, il riepilogo degli obiettivi che mi sono stati assegnati, ripartiti tra i vari progetti.
 
 \subsubsection*{DigitalSnapshots}
-\paragraph*{Obiettivi Minimi}
-\begin{itemize}
-\item Ristrutturazione della base di dati MySQL e della parte Model di CakePHP;
-\item Realizzazione moduli API e logica;
-\item Creazione interfaccia utente del cruscotto delle analisi; 
-\item Stesura della documentazione su quanto realizzato.
-\end{itemize}
-
-\paragraph*{Obiettivi Opzionali}
-\begin{itemize}
-\item Realizzazione di un modulo \textit{wizard} per la configurazione rapida del prodotto;
-\item Implementazione di una gerarchia di utenti, con livelli di privilegi differenti.
-\end{itemize}
+\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\rowcolors{2}{}{row}
+	\begin{longtable}{ | p{0.1\linewidth} | p{0.9\linewidth} |}	 
+		\hline   
+	    \rowcolor{header}\textbf{Codice}&\textbf{Descrizione}\\
+		\hline    	
+    	OM1 & Ristrutturazione della base di dati MySQL e della parte Model di CakePHP \\
+    	OM2 & Realizzazione moduli API e logica \\
+    	OM3 & Creazione interfaccia utente del cruscotto delle analisi \\
+    	OM4 & Stesura della documentazione su quanto realizzato \\
+    	OO1 & Realizzazione di un modulo \textit{wizard} per la configurazione rapida del prodotto \\
+    	OO2 & Implementazione di una gerarchia di utenti, con livelli di privilegi differenti \\
+    	\hline
+		\rowcolor{white}    	
+    	\caption{Riepilogo obiettivi per progetto DigitalSnapshots}
+	\end{longtable}
+	\label{tab:obiettivi-digitalsnapshots}
+\end{center}
 
 \subsubsection*{AWMS}
-\paragraph*{Obiettivi Minimi}
-\begin{itemize}
-\item Implementazione dei dati necessari nel database PostgreSQL e nella parte Model di CakePHP;
-\item Realizzazione moduli API e logica;
-\item Creazione interfaccia utente per la selezione della tipologia e delle opzioni di stampa; 
-\item Stesura della documentazione su quanto realizzato.
-\end{itemize}
-
-\paragraph*{Obiettivi Opzionali}
-\begin{itemize}
-\item Realizzazione di un modulo per la configurazione dei ruoli degli utenti;
-\item Implementazione di un migliore algoritmo di \textit{machine learning} per la pianificazione intelligente della forza lavoro a disposizione.
-\end{itemize}
+\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\rowcolors{2}{}{row}
+	\begin{longtable}{ | p{0.1\linewidth} | p{0.9\linewidth} |}	 
+		\hline   
+	    \rowcolor{header}\textbf{Codice}&\textbf{Descrizione}\\
+		\hline   	
+    	OM1 & Implementazione dei dati necessari nel database PostgreSQL e nella parte Model di CakePHP \\
+    	OM2 & Realizzazione moduli API e logica \\
+    	OM3 & Creazione interfaccia utente per la selezione della tipologia e delle opzioni di stampa \\
+    	OM4 & Stesura della documentazione su quanto realizzato \\
+    	OO1 & Realizzazione di un modulo per la configurazione dei ruoli degli utenti \\
+    	OO2 & Implementazione di un migliore algoritmo di \textit{machine learning} per la pianificazione intelligente della forza lavoro a disposizione \\
+    	\hline
+    	\rowcolor{white}
+    	\caption{Riepilogo obiettivi per progetto AWMS}
+	\end{longtable}
+	\label{tab:obiettivi-AWMS}
+\end{center}
 
 \section{Vincoli}
 \subsection{Vincoli temporali}

@@ -69,13 +69,15 @@
 
 \usepackage[italian]{varioref}          % riferimenti completi della pagina
 
-\usepackage[dvipsnames]{xcolor}         % colori
+\usepackage[dvipsnames, table]{xcolor}         % colori
+\definecolor{header}{RGB}{135, 195, 237}
+\definecolor{row}{RGB}{214, 214, 214}
 
 \usepackage{booktabs}                   % tabelle                                       
 \usepackage{tabularx}                   % tabelle di larghezza prefissata                                    
 \usepackage{longtable}                  % tabelle su più pagine                                        
 \usepackage{ltxtable}                   % tabelle su più pagine e adattabili in larghezza
-
+\usepackage{colortbl}
 \usepackage[toc, acronym]{glossaries}   % glossario
                                         % per includerlo nel documento bisogna:
                                         % 1. compilare una prima volta tesi.tex;
