@@ -113,10 +113,10 @@
 % Materiale principale
 %**************************************************************
 \mainmatter
-\input{capitoli/capitolo-1}             % Introduzione
-\input{capitoli/capitolo-2}             % Processi
-\input{capitoli/capitolo-3}             % Kick-Off
-\input{capitoli/capitolo-4}             % Concept Preview
+\input{capitoli/capitolo-1}             
+\input{capitoli/capitolo-2}           
+\input{capitoli/capitolo-3}         
+\input{capitoli/capitolo-4}   
 
 %\appendix                               
 %\input{capitoli/capitolo-A}             % Appendice A
@@ -124,10 +124,10 @@
 %**************************************************************
 % Materiale finale
 %**************************************************************
-\cleardoublepage
+%\cleardoublepage
 \backmatter
-\glossarystyle{listhypergroup}
-
+\setglossarystyle{listhypergroup}
+\printglossary[type=\acronymtype]
 \printglossaries
 
 \input{inizio-fine/bibliografia}
