@@ -4,37 +4,199 @@
 %**************************************************************
 \renewcommand{\acronymname}{Acronimi e abbreviazioni}
 
-\newacronym[description={\glslink{apig}{Application Program Interface}}]
-    {api}{API}{Application Program Interface}
-
-\newacronym[description={\glslink{umlg}{Unified Modeling Language}}]
-    {uml}{UML}{Unified Modeling Language}
+\newacronym{api}{API}{\markg{\Gls{Application Program Interface}}}
+\newacronym{iot}{IoT}{\markg{\Gls{Internet of Things}}}
+\newacronym{saas}{SaaS}{\markg{\Gls{Software as a Service}}}
+\newacronym{tdd}{TDD}{\markg{\Gls{Test Driven Development}}}
+\newacronym{orm}{ORM}{\markg{\Gls{Object-Relational Mapping}}}
+\newacronym{oop}{OOP}{\markg{\Gls{Object Oriented Programming}}}
+\newacronym{it}{IT}{Information Technology}
+\newacronym{dbms}{DBMS}{Database Management System}
+\newacronym{rdbms}{RDBMS}{Relational Database Management System}
 
 %**************************************************************
 % Glossario
 %**************************************************************
 \renewcommand{\glossaryname}{Glossario}
 
-\newglossaryentry{apig}
+\newglossaryentry{Application Program Interface}
 {
-    name=\glslink{api}{API},
-    text=Application Program Interface,
+    name=Application Program Interface,
     sort=api,
     description={in informatica con il termine \emph{Application Programming Interface API} (ing. interfaccia di programmazione di un'applicazione) si indica ogni insieme di procedure disponibili al programmatore, di solito raggruppate a formare un set di strumenti specifici per l'espletamento di un determinato compito all'interno di un certo programma. La finalità è ottenere un'astrazione, di solito tra l'hardware e il programmatore o tra software a basso e quello ad alto livello semplificando così il lavoro di programmazione}
 }
 
-\newglossaryentry{umlg}
+\newglossaryentry{client}
 {
-    name=\glslink{uml}{UML},
-    text=UML,
-    sort=uml,
-    description={in ingegneria del software \emph{UML, Unified Modeling Language} (ing. linguaggio di modellazione unificato) è un linguaggio di modellazione e specifica basato sul paradigma object-oriented. L'\emph{UML} svolge un'importantissima funzione di ``lingua franca'' nella comunità della progettazione e programmazione a oggetti. Gran parte della letteratura di settore usa tale linguaggio per descrivere soluzioni analitiche e progettuali in modo sintetico e comprensibile a un vasto pubblico}
+    name=client,
+    sort=client,
+    description={in ambito informatico, il termine \textit{\textbf{client}} indica un componente hardware o software che accede ed utilizza i servizi e le risorse di un server. Nell’ambito delle applicazioni web, il \textbf{\textbf{client}} viene identificato dal software (solitamente il \textit{browser web}) tramite cui l’utente invia le richieste al server}
 }
 
-\newglossaryentry{provaglossariog}
+\newglossaryentry{deployment}
 {
-    name=\glslink{provaglossario},
-    text=prova glossario,
-    sort=prova glossario,
-    description={prova del glossario}
+    name=deployment,
+    sort=deployment,
+    description={in ambito informatico, il termine \textbf{\textit{deployment}} indica la consegna o il rilascio al cliente di un’applicazione software. Tipicamente, il \textit{\textbf{deployment}} prevede anche l’installazione e/o la messa in funzione dell’applicazione stessa. Esso determina un passaggio di fase nel ciclo di sviluppo di un software, in quanto sancisce la fine della fase di codifica e collaudo e l’inizio di quella di manutenzione}
+}
+
+\newglossaryentry{end-to-end}
+{
+    name=end-to-end,
+    sort=end-to-end,
+    description={il termine \textit{\textbf{end-to-end}} indica in generale nell’ambito informatico una pratica che punta all’esecuzione di applicazioni nei nodi terminali di un sistema, ignorando il funzionamento di quelli intermedi. Con particolare riferimento all’attività di verifica, i test \textit{\textbf{end-to-end}} servono a controllare il corretto funzionamento di un intero sistema, testando unicamente le sue estremità}
+}
+
+\newglossaryentry{endpoint}
+{
+    name=endpoint,
+    sort=endpoint,
+    description={con il termine \textbf{\textit{endpoint}} si indica un nodo tramite il quale è possibile stabilire una comunicazione in rete. Nell’ambito delle \textit{API REST} esso è un indirizzo URL cui è possibile inviare richieste, abilitando la comunicazione tra più sistemi software, come ad esempio il \textit{back-end} ed il \textit{front-end} di un’applicazione web}
+}
+
+\newglossaryentry{framework}
+{
+    name=framework,
+    sort=framework,
+    description={in ambito informatico, un \textit{\textbf{framework}} è un’architettura di supporto su cui si può basare la progettazione e lo sviluppo di un software. Solitamente si tratta di un’implementazione logica di uno specifico design pattern, risolvendo un problema noto e ricorrente nello sviluppo di software, semplificando così il lavoro di uno sviluppatore}
+}
+
+\newglossaryentry{Internet of Things}
+{
+    name=Internet of Things,
+    sort=Internet of Things,
+    description={il termine \textit{\textbf{Internet of Things}} viene usato nell’ambito delle telecomunicazioni per indicare l’insieme delle tecnologie che permettono di collegare ad Internet un qualunque sistema. Conseguentemente, rappresenta l’insieme stesso di oggetti che utilizzano intelligenza software diventando connessi e comunicanti, formando una rete articolata di dispositivi di ogni genere dove viaggiano informazioni}
+}
+
+\newglossaryentry{open source}
+{
+    name=open source,
+    sort=open source,
+    description={il termine \textit{\textbf{open source}} indica un software i cui autori permettono la libera modifica e redistribuzione, talvolta anche a fini commerciali. Questo viene infatti pubblicato utilizzando apposite licenze che ne definiscono le politiche di utilizzo. Per i software che godono di questa proprietà viene anche reso pubblico il codice sorgente}
+}
+
+\newglossaryentry{spin-off}
+{
+    name=spin-off,
+    sort=spin-off,
+    description={nell’ambito del diritto indica la creazione di un nuovo soggetto giuridico, indipendente, originato a partire da una società preesistente. La scissione di un’unità organizzativa aziendale da quella principale avviene per permettere la creazione di un’innovazione che necessita di avere un adeguato sbocco sul mercato, solitamente diverso da quello originario}
+}
+
+\newglossaryentry{angular}
+{
+    name=angular,
+    sort=angular,
+    description={è una piattaforma \textit{open source} per lo sviluppo di applicazioni web sviluppata principalmente da Google. La caratteristica fondamentale di questo \textit{framework} è la capacità di rendere l’applicazione eseguibile interamente lato \textit{client} evitando di rispedire la pagina al server}
+}
+
+\newglossaryentry{back-end}
+{
+    name=back-end,
+    sort=back-end,
+    description={in informatica, il termine indica la parte di software che elabora i dati. Nel caso di una applicazione web, il \textit{\textbf{back-end}} è la parte di amministrazione del sito accessibile solamente agli amministratori del sito web}
+}
+
+\newglossaryentry{best practice}
+{
+    name=best practice,
+    sort=best practice,
+    description={in informatica, il termine indica un insieme di soluzioni che fornisce allo sviluppatore il modo migliore di risolvere un determinato problema}
+}
+
+\newglossaryentry{feedback}
+{
+    name=feedback,
+    sort=feedback,
+    description={indica molto spesso la possibilità di rilasciare un commento o una votazione su un determinato servizio o prodotto dando una valutazione del tutto personale dopo averlo utilizzato o comunque esaminato i suoi punti di forza e i suoi difetti. In questo modo, gli altri utenti che utilizzeranno lo stesso servizio o che acquisteranno lo stesso prodotto avranno la possibilità di sapere a priori se quel determinato servizio o prodotto ha soddisfatto o meno le aspettative dell’altro utente}
+}
+
+\newglossaryentry{startup}
+{
+    name=startup,
+    sort=startup,
+    description={in economia il termine \textit{\textbf{startup}} indica una nuova impresa alla ricerca di un modello di business ripetibile e scalabile}
+}
+
+\newglossaryentry{brainstorming}
+{
+    name=brainstorming,
+    sort=brainstorming,
+    description={metodo decisionale in cui la ricerca della soluzione di un dato problema è effettuata mediante sedute intensive di dibattito e confronto delle idee e delle proposte espresse liberamente dai partecipanti}
+}
+
+\newglossaryentry{Software as a Service}
+{
+    name=Software as a Service,
+    sort=Software as a Service,
+    description={con il termine \textit{\textbf{Software as a Service}} si indica un modello di distribuzione del software applicativo dove un produttore di software sviluppa, opera (direttamente o tramite terze parti) e gestisce un'applicazione web che mette a disposizione dei propri clienti via Internet }
+}
+
+\newglossaryentry{cloud}
+{
+    name=cloud,
+    sort=cloud,
+    description={in informatica indica l’erogazione di servizi su richiesta al cliente attraverso la rete internet, come per esempio servizi di archiviazione, elaborazione o la trasmissione di dati}
+}
+
+\newglossaryentry{machine learning}
+{
+    name=machine learning,
+    sort=machine learning,
+    description={il \textit{\textbf{machine learning}} è una branca dell'intelligenza artificiale utilizza metodi statistici per migliorare progressivamente la performance di un algoritmo nell'identificare pattern nei dati. Nell'ambito dell'informatica, il \textit{\textbf{machine learning}} è una variante alla programmazione tradizionale nella quale si predispone in una macchina l'abilità di apprendere qualcosa dai dati in maniera autonoma, senza ricevere istruzioni esplicite a riguardo}
+}
+
+\newglossaryentry{Test Driven Development}
+{
+    name=Test Driven Development,
+    sort=Test Driven Development,
+    description={il \textit{\textbf{Test Driven Development}} è un modello di sviluppo del software che prevede che la stesura dei test automatici avvenga prima di quella del software che deve essere sottoposto a test, e che lo sviluppo del software applicativo sia orientato esclusivamente all'obiettivo di passare i test automatici precedentemente predisposti}
+}
+
+\newglossaryentry{continuous integration}
+{
+    name=continuous integration,
+    sort=continuous integration,
+    description={nell'ingegneria del software, la \textit{\textbf{continuous integration}}, spesso abbreviato in CI, è una pratica che si applica in contesti in cui lo sviluppo del software avviene attraverso un sistema di versioning. Consiste nell'allineamento frequente dagli ambienti di lavoro degli sviluppatori verso l'ambiente condiviso (mainline). Il concetto è stato proposto come contromisura preventiva per il problema dell'"integration hell", ovvero le difficoltà dell'integrazione di porzioni di software sviluppati in modo indipendente su lunghi periodi di tempo e che di conseguenza potrebbero essere significativamente divergenti}
+}
+
+\newglossaryentry{Object-Relational Mapping}
+{
+    name=Object-Relational Mapping,
+    sort=Object-Relational Mapping,
+    description={in informatica l'\textit{\textbf{Object-Relational Mapping}} è una tecnica di programmazione che favorisce l'integrazione di sistemi software aderenti al paradigma della programmazione orientata agli oggetti con sistemi RDBMS}
+}
+
+\newglossaryentry{Object Oriented Programming}
+{
+    name=Object Oriented Programming,
+    sort=Object Oriented Programming,
+    description={In informatica la programmazione orientata agli oggetti (OOP, \textit{\textbf{Object Oriented Programming}}) è un paradigma di programmazione che permette di definire oggetti software in grado di interagire gli uni con gli altri attraverso lo scambio di messaggi}
+}
+
+\newglossaryentry{way of working}
+{
+    name=way of working,
+    sort=way of working,
+    description={il termine \textbf{\textit{way of working}} indica il metodo di lavoro in un determinato ambito}
+}
+
+\newglossaryentry{mockup}
+{
+    name=mockup,
+    sort=mockup,
+    description={il termine \textit{\textbf{mockup}} indica una realizzazione a scopo illustrativo o meramente espositivo di un oggetto o un sistema, senza le complete funzioni dell'originale; un \textit{\textbf{mockup}} può rappresentare la totalità o solo una parte dell'originale di riferimento (già esistente o in fase di progetto), essere in scala reale oppure variata}
+}
+
+\newglossaryentry{refactoring}
+{
+    name=refactoring,
+    sort=refactoring,
+    description={in ingegneria del software, il \textit{\textbf{refactoring}} (o code refactoring) è una tecnica strutturata per modificare la struttura interna di porzioni di codice senza modificarne il comportamento esterno, applicata per migliorare alcune caratteristiche non funzionali del software quali la leggibilità, la manutenibilità, la riusabilità, l'estensibilità del codice nonché la riduzione della sua complessità, eventualmente attraverso l'introduzione a posteriori di design pattern}
+}
+
+\newglossaryentry{front-end}
+{
+    name=front-end,
+    sort=front-end,
+    description={in informatica, il termine \textit{\textbf{front-end}} denota la parte visibile all'utente di un programma e con cui egli può interagire, ovvero l'interfaccia utente. Il \textbf{\textit{front-end}}, nella sua accezione più generale, è responsabile dell'acquisizione dei dati di ingresso e della loro elaborazione con modalità conformi a specifiche predefinite e invarianti, tali da renderli utilizzabili dal back-end.}
 }

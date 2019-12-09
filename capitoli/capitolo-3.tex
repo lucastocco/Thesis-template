@@ -18,7 +18,7 @@ In questo progetto, le mie attività si sono concentrate soprattutto sullo svilu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Architettura}
 \label{subsec:architettura-monolitica}
-Come descritto nel capitolo precedente, i prodotti descritti poc'anzi sono classificabili come \textit{Software as a Service} (\textit{SaaS}). Nello specifico, la loro architettura software utilizza un approccio monolitico, in quanto tutto il prodotto è racchiuso in un unico \textit{package}. Il vantaggio principale di questa tipologia architetturale è senza dubbio la semplicità: un'architettura monolitica è infatti molto più semplice da sviluppare (specialmente ad inizio progetto) rispetto ad un'architettura a microservizi, che aggiunge la complessità di creare un sistema distribuito. La sua semplicità si estende inoltre alla fase di \textit{testing}, perché agevola l'implementazione di test \textit{end-to-end}, e alla fase di \textit{deploying}, dato che tutta l'applicazione sarà confinata in un unico \textit{package}. Quest'ultima caratteristica consente di facilitare lo \textit{scaling} orizzontale dell'applicazione, in quanto basterà lanciare istanze multiple del prodotto, gestite da un \textit{load balancer}.\\
+Come descritto nel capitolo precedente, i prodotti descritti poc'anzi sono classificabili come \textit{Software as a Service} (\textit{\acrshort{saas}}). Nello specifico, la loro architettura software utilizza un approccio monolitico, in quanto tutto il prodotto è racchiuso in un unico \textit{package}. Il vantaggio principale di questa tipologia architetturale è senza dubbio la semplicità: un'architettura monolitica è infatti molto più semplice da sviluppare (specialmente ad inizio progetto) rispetto ad un'architettura a microservizi, che aggiunge la complessità di creare un sistema distribuito. La sua semplicità si estende inoltre alla fase di \textit{testing}, perché agevola l'implementazione di test \markg{\textit{\gls{end-to-end}}}, e alla fase di \textit{deploying}, dato che tutta l'applicazione sarà confinata in un unico \textit{package}. Quest'ultima caratteristica consente di facilitare lo \textit{scaling} orizzontale dell'applicazione, in quanto basterà lanciare istanze multiple del prodotto, gestite da un \textit{load balancer}.\\
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{monolith.jpeg}
@@ -29,31 +29,31 @@ Come descritto nel capitolo precedente, i prodotti descritti poc'anzi sono class
 \end{figure}
 
 Tuttavia, questa architettura presenta alcuni -pesanti- lati negativi: innanzitutto, la velocità di avvio dell'applicazione è legata alle dimensioni della stessa, questo perché tutti i servizi vengono lanciati in un'unica volta e non \textit{on-demand}. In secondo luogo, la manutenzione del codice è resa difficile in quanto, non essendoci una netta separazione tra le varie funzionalità del prodotto, non è facile capire dove e come effettuare le modifiche richieste. Inoltre, nonostante la scalabilità orizzontale sia stata inserita tra i punti di forza di questa architettura, è presente il grosso rischio che un singolo \textit{bug}, in un qualsiasi modulo del prodotto, possa potenzialmente inibire l'intera applicazione, dato che tutte le istanze create sono identiche.
-Infine, l'architettura monolitica non si presta bene all'introduzione di nuove tecnologie, dato che i cambiamenti ai linguaggi o ai \textit{framework} utilizzati andranno ad impattare su tutto il sistema, risultando quindi molto costosi e rischiosi.
+Infine, l'architettura monolitica non si presta bene all'introduzione di nuove tecnologie, dato che i cambiamenti ai linguaggi o ai \textit{\gls{framework}} utilizzati andranno ad impattare su tutto il sistema, risultando quindi molto costosi e rischiosi.
 
 %**************************************************************
 \section{\textit{Stack} tecnologico}
 \subsection{CakePHP}
-CakePHP è un \textit{framework} in linguaggio PHP, generalmente utilizzato per la realizzazione di applicativi web.\\
-Scritto in PHP, segue un approccio MVC (\textit{Model-View-Controller}) e, grazie all'\textit{ORM} integrato, facilita l'iterazione con i database relazionali. L'\textit{ORM} infatti fornisce, mediante un'interfaccia orientata agli oggetti, tutti i servizi inerenti alla persistenza dei dati, astraendo nel contempo le caratteristiche implementative dello specifico \textit{RDBMS} utilizzato. L'utilizzo di un \textit{ORM} fornisce diversi vantaggi, tra cui la diminuzione del codice sorgente da redigere, in quanto esso dispone di metodi \textit{built-in} per effettuare le operazioni più comuni (come ad esempio le \textit{CRUD}), o la gestione automatica della concorrenza nell'accesso ai dati, evitando così i conflitti tra lettura e scrittura in caso di più accessi simultanei allo stesso record.\\
-Nonostante CakePHP consenta di realizzare applicazioni complete, gestendo quindi anche l'interfaccia utente, i progetti in cui sono stato inserito si appoggiano a questo \textit{framework} solamente per interfacciarsi alla base di dati tramite \textit{API}.
+CakePHP è un \textit{\gls{framework}} in linguaggio PHP, generalmente utilizzato per la realizzazione di applicativi web.\\
+Scritto in PHP, segue un approccio MVC (\textit{Model-View-Controller}) e, grazie all'\textit{\acrshort{orm}} integrato, facilita l'iterazione con i database relazionali. L'\textit{\acrshort{orm}} infatti fornisce, mediante un'interfaccia orientata agli oggetti, tutti i servizi inerenti alla persistenza dei dati, astraendo nel contempo le caratteristiche implementative dello specifico \markg{\textit{\acrshort{rdbms}}} utilizzato. L'utilizzo di un \textit{\acrshort{orm}} fornisce diversi vantaggi, tra cui la diminuzione del codice sorgente da redigere, in quanto esso dispone di metodi \textit{built-in} per effettuare le operazioni più comuni (come ad esempio le \textit{CRUD}), o la gestione automatica della concorrenza nell'accesso ai dati, evitando così i conflitti tra lettura e scrittura in caso di più accessi simultanei allo stesso record.\\
+Nonostante CakePHP consenta di realizzare applicazioni complete, gestendo quindi anche l'interfaccia utente, i progetti in cui sono stato inserito si appoggiano a questo \textit{\gls{framework}} solamente per interfacciarsi alla base di dati tramite \textit{\acrshort{api}}.
 \subsection{MySQL e PostgreSQL}
 Come detto in precedenza, in questi due progetti sono state utilizzate due basi di dati che abbracciano il paradigma SQL, rispettivamente MySQL in \DS{} e PostgreSQL in AWMS.
 La principale differenza tra questi due database è la tipologia di dati memorizzabili nelle tabelle: mentre MySQL conserva tipi di dato semplici (come dati numerici, stringhe o date), PostgreSQL consente di memorizzare anche tipi di dato più complessi, come array, gli XML, oppure i JSON.
-La capacità di poter memorizzare dati di tipo XML o JSON rende PostgreSQL, di fatto, una sorta di DBMS ibrido, che si frappone tra i database che utilizzano un approccio SQL puro, ed i database che invece utilizzano un paradigma NoSQL. 
+La capacità di poter memorizzare dati di tipo XML o JSON rende PostgreSQL, di fatto, una sorta di \markg{\acrshort{dbms}} ibrido, che si frappone tra i database che utilizzano un approccio SQL puro, ed i database che invece utilizzano un paradigma NoSQL. 
 \subsection{AngularJS e Angular2+}
-\`E una piattaforma open source per lo sviluppo di applicazioni web sviluppato principalmente da Google. La caratteristica fondamentale di questo framework è la capacità di rendere l’applicazione eseguibile interamente lato client evitando di rispedire la pagina al server. La comunicazione con la base di dati avviene attraverso API, che viene poi gestita da CakePHP fino al ritorno del risultato richiesto.\\
-\`E doveroso precisare che esistono due versioni differenti di questo \textit{framework}: \textbf{AngularJS} (anche chiamato Angular1.x) e \textbf{Angular2+}. Durante il tirocinio ho avuto modo di utilizzare entrambe le versioni, rispettivamente su \DS{} e su AWMS. 
+\`E una piattaforma \markg{\gls{open source}} per lo sviluppo di applicazioni web sviluppato principalmente da Google. La caratteristica fondamentale di questo \textit{\gls{framework}} è la capacità di rendere l’applicazione eseguibile interamente lato \gls{client} evitando di rispedire la pagina al server. La comunicazione con la base di dati avviene attraverso \acrshort{api}, che viene poi gestita da CakePHP fino al ritorno del risultato richiesto.\\
+\`E doveroso precisare che esistono due versioni differenti di questo \textit{\gls{framework}}: \textbf{AngularJS} (anche chiamato Angular1.x) e \textbf{Angular2+}. Durante il tirocinio ho avuto modo di utilizzare entrambe le versioni, rispettivamente su \DS{} e su AWMS. 
 Le differenze più evidenti si hanno nel linguaggio di programmazione, passato da Javascript ES5/ES6 a Typescript, superset tipizzato di Javascript (ES5 ed ES6 rimangono perfettamente compatibili), e nell'approccio architetturale: entrambe le versioni dichiarano una struttura MVC, ma Angular2+ utilizza una filosofia che si discosta dall'MVC classico, introducendo il concetto di \textit{Component}, ovvero il "mattone base" per la costruzione dell'applicativo.
 Ogni Component applica il pattern MVC e può essere padre (o figlio) di altri Component. Questa struttura permette di trattare i singoli Component come se fossero oggetti indipendenti ed in seguito, come suggerisce il nome stesso, comporli tra loro a formare l'interfaccia.
 \subsection{Redis}
-Redis è un datastore in memoria molto rapido, open source e di tipo chiave-valore adatto all'utilizzo con database, caching, broker di messaggistica e code.\\
+Redis è un datastore in memoria molto rapido, \gls{open source} e di tipo chiave-valore adatto all'utilizzo con database, caching, broker di messaggistica e code.\\
 Nell'ambito dell'attività di stage, questo \textit{tool} è stato implementato solamente nel progetto AWMS, con lo scopo di salvare i risultati derivanti dalle richieste al database, così da averli immediatamente disponibili in caso di richieste multiple, rendendo il sistema più reattivo e impegnando per meno tempo la base di dati.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{architecture.png}
 \centering
-\caption{Schema architetturale di come i \textit{framework} interagiscono tra loro all'interno di \DS{} ed AWMS.} 
+\caption{Schema architetturale di come i \textit{\gls{framework}} interagiscono tra loro all'interno di \DS{} ed AWMS.} 
 \label{fig:architecture}
 \end{figure}
 
@@ -62,14 +62,14 @@ Nell'ambito dell'attività di stage, questo \textit{tool} è stato implementato 
 %pianificazione in base alle scadenze di progetto, agli sprint programmati e agli impegni accademici personali
 Partecipando a due progetti già in fase di sviluppo avanzata, le attività da svolgere e le componenti da realizzare, al mio arrivo in azienda, erano chiare e ben definite. \\
 Assieme al tutor aziendale, nonché responsabile dei progetti, abbiamo pianificato queste attività basandoci sulla difficoltà tecnica e sulle competenze necessarie per poterle svolgere.\\
-Fissato il termine di consegna per il progetto \DS{}, coincidente con il traguardo di metà tirocinio, abbiamo quindi distribuito temporalmente le attività assegnatemi, riservando una intera settimana allo studio delle tecnologie che avrei dovuto utilizzare e alla comprensione del funzionamento del prodotto stesso.\\
+Fissato il termine di consegna per il progetto \DS{}, coincidente con il traguardo di metà tirocinio, abbiamo quindi distribuito temporalmente le attività assegnatemi, riservando una intera settimana allo studio delle tecnologie che avrei dovuto utilizzare, e circa 3 giorni (per ciascun progetto) alla comprensione del funzionamento del prodotto stesso.\\
 Naturalmente, le attività sono state suddivise anche per progetto di appartenenza, così da rendere più ordinato (e logico) il processo di sviluppo.\\
 Come descritto in §\ref{subsec:vincoli-metodologici}, il modello di sviluppo adottato è lo Scrum, che prevedeva Sprint della durata di due settimane ed un meeting di allineamento a metà di ogni Sprint, così da tenere sotto controllo l'andamento dello sviluppo ed intervenire tempestivamente in caso di eventuali difficoltà riscontrate.
 Nella pianificazione, inoltre, abbiamo tenuto conto dei giorni in cui sarei stato impegnato con gli esami universitari, ma non sono state previste contromisure in caso di altre mie assenze.\\
 Per quanto riguarda i rischi legati all'attività di codifica, al netto di difficoltà tecniche dovute all'inesperienza, abbiamo deciso di mitigarli tramite la stesura di test d'unità e test d'integrazione. Questa soluzione, sebbene richieda molto più tempo rispetto alla sola scrittura del codice del prodotto, consente di ridurre il rischio di introduzione di bug nel sistema.
 %**************************************************************
 \section{Analisi dei requisiti}
-Durante questa fase, assieme al team di sviluppo, ho stilato in maniera più dettagliata i requisiti che ogni attività assegnatami doveva soddisfare.\\
+Durante questa fase, durata complessivamente un paio di giorni, assieme al team di sviluppo ho stilato in maniera più dettagliata i requisiti che ogni attività assegnatami doveva soddisfare.\\
 Ad ogni requisito è stato quindi affidata una sigla identificativa, rendendoli così più facilmente tracciabili, e soprattutto, conferendo loro una classificazione in base all'importanza del requisito stesso.\\
 La sigla identificativa di ogni requisito rispetta il formato \textbf{R[tipo][numero]}, dove la R iniziale indica che il codice si riferisce ad un requisito, "tipo" assume il valore dell'iniziale della tipologia di requisito, sia esso Opzionale, Desiderabile o Facoltativo, mentre "numero" indica il numero cardinale del requisito di tipo dato.
 
@@ -102,7 +102,7 @@ Alcuni esempi delle specifiche delineate sono riportati nella tabella a seguire.
 Da notare che il requisito RD2 non è stato considerato obbligatorio in quanto, per natura, l'applicazione deve consentire all'utente una panoramica sui progetti e sulle analisi. Pertanto, l'esecuzione del prodotto su dispositivi mobili, sebbene possibile, è fortemente sconsigliata.
 
 \subsubsection*{AWMS}
-Le attività da svolgere in questo progetto, invece, riguardavano la creazione di un modulo per l'esportazione di dati in forma tabellare su file di tipo PDF e/o XLSX, e si concentravano prevalentemente sul lato \textit{back-end} dell'applicativo.
+Le attività da svolgere in questo progetto, invece, riguardavano la creazione di un modulo per l'esportazione di dati in forma tabellare su file di tipo PDF e/o XLSX, e si concentravano prevalentemente sul lato \textit{\gls{back-end}} dell'applicativo.
 Successivamente alla consegna di \DS{}, ho partecipato ad una riunione con il team di sviluppo di AWMS, nel quale abbiamo individuato 14 requisiti riguardanti le attività che mi apprestavo a svolgere, suddivisi nel seguente modo:
 \begin{itemize}
     \item \textbf{Obbligatori:} 8;
@@ -135,25 +135,25 @@ Alcuni esempi delle specifiche delineate sono riportati nella tabella \ref{tab:r
 % definizione dei requisiti\\
 %**************************************************************
 \section{Progettazione}
-Successivamente all'individuazione e alla classificazione dei requisiti da soddisfare, ho potuto procedere alla fase di progettazione, nella quale ho scelto librerie e \textit{framework} di supporto, e definito una struttura che mi permettesse di soddisfare i requisiti.
+Successivamente all'individuazione e alla classificazione dei requisiti da soddisfare, ho potuto procedere alla fase di progettazione, nella quale ho scelto librerie e \textit{\gls{framework}} di supporto, e definito una struttura che mi permettesse di soddisfare i requisiti. La durata di questa fase è stata di circa una settimana per ciascun progetto.
 \subsection{\DS}
 \subsubsection{Modellazione base di dati}
 Per poter raggiungere gli obiettivi prefissati, è stato necessaria un'attenta analisi della struttura e dei dati contenuti nel database. Da qui, sono emerse grosse limitazioni riguardanti la scalabilità, circoscrivendo di fatto gli ambiti di utilizzo dell'applicazione.\\
 \`E stato necessario quindi ristrutturare il database, astraendo e generalizzando il più possibile le tabelle, così da rendere il prodotto più versatile nell'utilizzo. Tuttavia, a causa della prossimità della scadenza di consegna, non è stato possibile ristrutturare completamente la base di dati, ma solamente le parti alle quali mi sono approcciato.   
-\subsubsection{Progettazione API}
-Una volta definita la struttura del database, ho provveduto predisporre gli \textit{endpoint} per le richieste HTTP che il client dovrà effettuare per poter accedere ai dati.\\
-Prima di progettare la realizzazione di un nuovo \textit{endpoint}, mi sono assicurato che non ce ne fossero altri che avevano lo stesso scopo, così da evitare di duplicare il codice ed aumentare la complessità del prodotto. Questa attività è stata molto onerosa in termini di tempo a causa della scarseggiante documentazione del codice, che mi ha obbligato quindi ad una revisione manuale dell'intero progetto.
+\subsubsection{Progettazione \acrshort{api}}
+Una volta definita la struttura del database, ho provveduto predisporre gli \markg{\textit{\gls{endpoint}}} per le richieste HTTP che il \gls{client} dovrà effettuare per poter accedere ai dati.\\
+Prima di progettare la realizzazione di un nuovo \textit{\gls{endpoint}}, mi sono assicurato che non ce ne fossero altri che avevano lo stesso scopo, così da evitare di duplicare il codice ed aumentare la complessità del prodotto. Questa attività è stata molto onerosa in termini di tempo a causa della scarseggiante documentazione del codice, che mi ha obbligato quindi ad una revisione manuale dell'intero progetto.
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{api-simple.png}
 \centering
-\caption{Semplificazione del funzionamento di una API REST.} 
+\caption{Semplificazione del funzionamento di una \acrshort{api} REST.} 
 \label{fig:api-simple}
 \end{figure}
 %- architettura REST, quindi importanza delle API\\
 %- progettazione e descrizione API più significative\\
 \subsubsection{Progettazione interfaccia utente}
-Per quanto riguarda l'impostazione e lo stile dell'interfaccia utente, non ho dovuto progettare più di tanto, in quanto ero vincolato a seguire i \textit{mockup} realizzati (e già approvati dagli \textit{stakeholder}) dal UI/UX designer.\\
-Per la realizzazione dei grafici ho sfruttato la libreria open source Chart.Js\footnote{\textit{Chart.Js.} URL: \href{https://www.chartjs.org/}{https://www.chartjs.org/}}, che permette la facile implementazione di diverse tipologie di grafico, mantenendo la struttura dei dati in ingresso pressoché invariata tra un tipo di grafico e l'altro. 
+Per quanto riguarda l'impostazione e lo stile dell'interfaccia utente, non ho dovuto progettare più di tanto, in quanto ero vincolato a seguire i \markg{\textit{\gls{mockup}}} realizzati (e già approvati dagli \textit{stakeholder}) dal UI/UX designer.\\
+Per la realizzazione dei grafici ho sfruttato la libreria \gls{open source} Chart.Js\footnote{\textit{Chart.Js.} URL: \href{https://www.chartjs.org/}{https://www.chartjs.org/}}, che permette la facile implementazione di diverse tipologie di grafico, mantenendo la struttura dei dati in ingresso pressoché invariata tra un tipo di grafico e l'altro. 
 Questa caratteristica mi ha permesso di standardizzare la creazione del grafico applincando un \textit{factory pattern}, quindi estendendo la classe \textit{Chart}, fornita dalla libreria, ed implementando dei metodi di servizio per la selezione della tipologia di grafico, per l'aggiunta di ulteriori \textit{dataset} (ove possibile) o per la modifica delle opzioni di rendering.
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{factory_pattern_uml_diagram.jpg}
@@ -168,12 +168,12 @@ Questa caratteristica mi ha permesso di standardizzare la creazione del grafico 
 
 \subsection{AWMS}
 \subsubsection{Modellazione base di dati}
-Dal punto di vista del DBMS, AWMS è molto più strutturato rispetto a \DS{}. Parte del merito è riconducibile all'utilizzo di PostgreSQL che, grazie alla sua capacità di immagazzinare dati in formato JSON, consente agli sviluppatori di creare delle colonne temporanee nelle quali inserire e testare i nuovi dati da implementare. Una volta verificata l'utilità di tali dati, verrà creata una colonna apposita per tipologia di dato in aggiunta e verranno quindi rimossi dalla colonna temporanea.\\
-Le modifiche che ho apportato a questo DBMS sono state molto limitate e si è trattato esclusivamente di aggiunte di nuove colonne, come ad esempio l'orario di inizio e di fine della pausa pranzo dello staff, o gli indirizzi di posta elettronica ai quali inviare la pianificazione giornaliera.  
+Dal punto di vista del \acrshort{dbms}, AWMS è molto più strutturato rispetto a \DS{}. Parte del merito è riconducibile all'utilizzo di PostgreSQL che, grazie alla sua capacità di immagazzinare dati in formato JSON, consente agli sviluppatori di creare delle colonne temporanee nelle quali inserire e testare i nuovi dati da implementare. Una volta verificata l'utilità di tali dati, verrà creata una colonna apposita per tipologia di dato in aggiunta e verranno quindi rimossi dalla colonna temporanea.\\
+Le modifiche che ho apportato a questo \acrshort{dbms} sono state molto limitate e si è trattato esclusivamente di aggiunte di nuove colonne, come ad esempio l'orario di inizio e di fine della pausa pranzo dello staff, o gli indirizzi di posta elettronica ai quali inviare la pianificazione giornaliera.  
 %- importanza di una buona progettazione del db\\
 %- modifiche apportate alle basi di dati\\
-\subsubsection{Progettazione API e generazione dei report}
-Fortunatamente, la progettazione delle API per la stampa è stata semplificata dal fatto che ho potuto riutilizzare le \textit{query} create per la visualizzazione a schermo della pianificazione giornaliera. \\
+\subsubsection{Progettazione \acrshort{api} e generazione dei report}
+Fortunatamente, la progettazione delle \acrshort{api} per la stampa è stata semplificata dal fatto che ho potuto riutilizzare le \textit{query} create per la visualizzazione a schermo della pianificazione giornaliera. \\
 Per quanto concerne la creazione del report di stampa, ho scelto di appoggiarmi alla libreria PHPSpreadsheet\footnote{\textit{PHPSpreadsheet.} URL: \href{https://phpspreadsheet.readthedocs.io/en/latest/}{https://phpspreadsheet.readthedocs.io/}} per la generazione del file in formato XLSX, e a TCPDF\footnote{\textit{TCPDF.} URL: \href{https://tcpdf.org/}{https://tcpdf.org/}} per la generazione del file in formato PDF.\\
 Dopo uno studio approfondito e qualche prova in ambiente \textit{sandbox} di entrambe le librerie, ho individuato gli \textit{step} comuni per arrivare alla generazione dei file, riuscendo così ad incapsulare i due algoritmi dentro un pattern di tipo \textit{template method}.\\
 \begin{figure}[h]
@@ -196,13 +196,12 @@ Per quanto concerne il filtraggio dei dati da stampare, ho strutturato un \texti
 %- progettazione e descrizione API più significative\\
 
 \subsubsection{Progettazione interfaccia utente}
-Anche in questo caso, l'interfaccia utente non ha avuto bisogno di molta progettazione, in quanto dovevo seguire quanto esplicitato nel \textit{mockup} creato dai designer.
+Anche in questo caso, l'interfaccia utente non ha avuto bisogno di molta progettazione, in quanto dovevo seguire quanto esplicitato nel \textit{\gls{mockup}} creato dai designer.
 %**************************************************************
 \section{Codifica}
 In seguito alla progettazione dell'architettura e dei componenti dei progetti in questione, sono passato alla fase codifica.\\
-Lo sviluppo, nonostante l'inesperienza, è avanzato senza troppe difficoltà tecniche, questo anche dovuto al fatto che le attività assegnatemi erano relativamente semplici o comunque di contorno. Inoltre, in caso di dubbi, potevo sempre contare sull'aiuto dei colleghi, che si sono rivelati molto disponibili nell'aiutarmi.\\
-Le maggiori difficoltà, tuttavia, le ho incontrate durante le attività di modifica al database e nel \textit{refactoring} di alcuni metodi già esistenti, come ad esempio le \textit{query} per il recupero dei dati richiesti. Ciò è stato causato dalla quasi totale assenza, in entrambi i progetti, di documentazione riguardante la struttura della base di dati e delle funzionalità del codice scritto fino a quel momento. 
-
+La stesura del codice è durata in totale circa tre settimane e, nonostante l'inesperienza, è avanzata senza troppe difficoltà tecniche, questo anche dovuto al fatto che le attività assegnatemi erano relativamente semplici o comunque di contorno. Inoltre, in caso di dubbi, potevo sempre contare sull'aiuto dei colleghi, che si sono rivelati molto disponibili nell'aiutarmi.\\
+Le maggiori difficoltà, tuttavia, le ho incontrate durante le attività di modifica al database e nel \markg{\textit{\gls{refactoring}}} di alcuni metodi già esistenti, come ad esempio le \textit{query} per il recupero dei dati richiesti. Ciò è stato causato dalla quasi totale assenza, in entrambi i progetti, di documentazione riguardante la struttura della base di dati e delle funzionalità del codice scritto fino a quel momento. 
 \begin{figure}[h]
 \includegraphics[width=\textwidth , keepaspectratio]{bad-coding-issues.jpeg}
 \centering
@@ -210,19 +209,6 @@ Le maggiori difficoltà, tuttavia, le ho incontrate durante le attività di modi
 \source{\href{https://medium.com/better-programming/good-code-vs-bad-code-35624b4e91bc}{Medium.com}}
 \label{fig:bad-coding-issues}
 \end{figure}
-%\subsection{Implementazione moduli di stampa}
-%- stampa su file .xlsx e/o .pdf\\
-%- front-end => dialog con scelta di opzioni di stampa\\
-%- back-end => design pattern applicati e principi SOLID\\
-%\subsection{Implementazione cruscotti delle analisi}
-%\begin{figure}[h]
-%\includegraphics[width=\textwidth , keepaspectratio]{grafico-developers.png}
-%\centering
-%\caption{Esempio di grafico realizzabile nella piattaforma \DS{}.} 
-%\label{fig:grafico-developers}
-%\end{figure}
-%- importanza dei cruscotti di analisi
-%- implementazione libreria chart.js
 %**************************************************************
 \section{Verifica}
 \subsection{Analisi statica}
@@ -230,10 +216,10 @@ In entrambi i progetti alla quale ho partecipato, abbiamo effettuato l'analisi s
 Nello specifico, abbiamo utilizzato ESLint per l'analisi del codice basato su Javascript (quindi anche per Typescript), mentre per il codice PHP ci siamo affidati alle librerie PHP Parallel Lint, CodeSniffer e PHPStan, utili rispettivamente per il controllo della sintassi, dello stile e degli errori logici.\\
 Purtroppo, nessuno dei due progetti era provvisto di \textit{continous integration}, quindi questi controlli venivano effettuati solamente nell'ambiente di sviluppo locale, non assicurando la conformità del codice redatto dai membri dei team, alle norme configurate in questi \textit{tool}.
 \subsection{Analisi dinamica}
-L'attività di analisi dinamica è stata effettuata tramite l'esecuzione automatica dei test sviluppati prima della stesura del codice del prodotto, seguendo l'approccio TDD (Figura \ref{fig:tdd}).\\
-L'ambiente di testing consiste in una \textit{pipeline} automatica configurata tramite il \textit{framework} Jenkins. Data l'assenza della \textit{continous integration} in entrambi i progetti, la \textit{pipeline} è stata configurata solamente in ambiente locale, così da poter testare e sperimentare senza correre il rischio di entrare in conflitto con l'ambiente di produzione.\\
-La struttura dei test da effettuare è stata generata automaticamente dai \textit{plug-in} di PHPUnit (per il codice PHP) e Jasmine (per il codice Javascript/Typescript), installati nell'IDE PHPStorm. Questa funzionalità mi ha permesso di risparmiare molto tempo, in quanto ho dovuto solamente codificare il corpo del test da eseguire.\\
-Di seguito riporto i risultati di alcuni test effettuati nel progetto AWMS, come esempio:
+L'attività di analisi dinamica è stata effettuata tramite l'esecuzione automatica dei test sviluppati prima della stesura del codice del prodotto, seguendo l'approccio \acrshort{tdd} (Figura \ref{fig:tdd}).\\
+L'ambiente di testing consiste in una \textit{pipeline} automatica configurata tramite il \textit{\gls{framework}} Jenkins. Data l'assenza della \textit{continous integration} in entrambi i progetti, la \textit{pipeline} è stata configurata solamente in ambiente locale, così da poter testare e sperimentare senza correre il rischio di entrare in conflitto con l'ambiente di produzione.\\
+La struttura dei test da effettuare è stata generata automaticamente dai \textit{plug-in} di PHPUnit (per il codice PHP) e Jasmine (per il codice Javascript/Typescript), installati nell'IDE PHPStorm. Questa funzionalità mi ha permesso di risparmiare molto tempo, in quanto ho dovuto solamente codificare il corpo del test da eseguire, mentre la definizione del test veniva generata automaticamente dal \textit{\gls{framework}}.\\
+Nella seguente tabella sono riportati i risultati di alcuni test d'unità effettuati nel progetto AWMS. 
 
 \begin{center}
 	\renewcommand{\arraystretch}{1.5}
@@ -261,7 +247,7 @@ Nonostante il superamento di tutti i test eseguiti in locale, questa tipologia d
 %**************************************************************
 \section{Validazione}
 \subsection{Bilancio dei requisiti soddisfatti}
-Terminata la fase di sviluppo, siamo passati alla fase di verifica della copertura dei requisiti, accertandoci quindi che il prodotto finale rispondesse alle esigenze richieste.\\
+Terminata la fase di sviluppo, abbiamo dedicato due giorni alla fase di verifica della copertura dei requisiti, accertandoci quindi che il prodotto finale rispondesse alle esigenze richieste.\\
 Per entrambi i progetti, il bilancio risulta essere positivo: sono stati da me soddisfatti tutti i requisiti obbligatori ed alcuni desiderabili.\\
 Per quanto concerne il progetto \DS{}, non sono stati soddisfatti i requisiti:
 \begin{itemize}
@@ -273,14 +259,14 @@ Nell'ambito del progetto AWMS invece, la copertura dei requisiti soddisfatti ris
 Nel complesso, i team di sviluppo con i quali ho collaborato, si sono detti soddisfatti del lavoro svolto, tanto che mi è stato proposto di continuare a lavorare in \AD{} dopo la laurea.\\
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{interfaccia-stampa-awms.png} 
+\includegraphics[width=0.65\textwidth]{interfaccia-stampa-awms.png} 
 \caption{Interfaccia per la stampa della pianificazione giornaliera di AWMS.}
 \end{figure}
 
-Per quanto riguarda la consegna di \DS{}, il reparto tecnico di Electrolux ha fornito un feedback positivo sul modulo di analisi che ho implementato, abbozzando la possibilità che la stessa struttura possa essere implementata in altri progetti interni. 
+Per quanto riguarda la consegna di \DS{}, il reparto tecnico di Electrolux ha fornito un \gls{feedback} positivo sul modulo di analisi che ho implementato, abbozzando la possibilità che la stessa struttura possa essere implementata in altri progetti interni. 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{grafico-developers.png} 
+\includegraphics[width=0.65\textwidth]{grafico-developers.png} 
 \caption{Esempio di grafico realizzabile tramite il modulo di analisi implementato in \DS{}.}
 \end{figure}
 

@@ -7,15 +7,74 @@
 \label{cap:valutazione-retrospettiva}
 %**************************************************************
 \section{Bilancio degli obiettivi raggiunti}
-- tabella che indica gli obiettivi soddisfatti e non soddisfatti \\
-- spiegazione degli obiettivi non soddisfatti\\
-- bilancio degli obiettivi personali
+\label{sec:bilancio-obiettivi}
+Al termine dell'attività di tirocinio, il tutor aziendale ha redatto il bilancio degli obiettivi a me assegnati, descritti in §\ref{subsec:aspettative-aziendali}.\\
+La seguente tabella riporta gli obiettivi minimi e quelli opzionali di ogni progetto, indicando per ciascuno di essi l'esito a fine periodo.
+\subsubsection*{DigitalSnapshots}
+\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\rowcolors{2}{}{row}
+	\begin{longtable}{ | p{0.1\linewidth} | p{0.7\linewidth} | p{0.2\linewidth}|}	 
+		\hline
+	    \rowcolor{header}\textbf{Codice}&\textbf{Descrizione} & \textbf{Esito}\\
+		\hline    	
+    	OM1 & Ristrutturazione della base di dati MySQL e della parte Model di CakePHP & \textcolor{ForestGreen}{\textit{Soddisfatto}} \\
+    	OM2 & Realizzazione moduli \acrshort{api} e logica & \textcolor{ForestGreen}{\textit{Soddisfatto}} \\
+    	OM3 & Creazione interfaccia utente del cruscotto delle analisi & \textcolor{ForestGreen}{\textit{Soddisfatto}} \\
+    	OM4 & Stesura della documentazione su quanto realizzato & \textcolor{ForestGreen}{\textit{Soddisfatto}}\\
+    	OO1 & Realizzazione di un modulo \textit{wizard} per la configurazione rapida del prodotto & \textcolor{red}{\textit{Non soddisfatto}} \\
+    	OO2 & Implementazione di una gerarchia di utenti, con livelli di privilegi differenti & \textcolor{red}{\textit{Non soddisfatto}} \\
+    	\hline
+		\rowcolor{white}    	
+    	\caption{Bilancio obiettivi per il progetto DigitalSnapshots.}
+	\end{longtable}
+	\label{tab:bilancio-obiettivi-digitalsnapshots}
+\end{center}
+In questo progetto sono stati raggiunti tutti gli obiettivi minimi, mentre non sono stati soddisfatti gli obiettivi opzionali \textbf{OO1} e \textbf{OO2}, a causa della scadenza ravvicinata e della mia poca conoscenza del prodotto in toto.\\
+In aggiunta, il secondo obiettivo non soddisfatto avrebbe richiesto una ristrutturazione radicale della logica dell'applicativo e con essa modifiche sostanziali alla base di dati.
+\subsubsection*{AWMS}
+\begin{center}
+	\renewcommand{\arraystretch}{1.5}
+	\rowcolors{2}{}{row}
+	\begin{longtable}{ | p{0.1\linewidth} | p{0.7\linewidth} | p{0.2\linewidth}| }	 
+		\hline   
+	    \rowcolor{header}\textbf{Codice}&\textbf{Descrizione} & \textbf{Esito}\\
+		\hline   	
+    	OM1 & Implementazione dei dati necessari nel database PostgreSQL e nella parte Model di CakePHP & \textcolor{ForestGreen}{\textit{Soddisfatto}}\\
+    	OM2 & Realizzazione moduli \acrshort{api} e logica & \textcolor{ForestGreen}{\textit{Soddisfatto}}\\
+    	OM3 & Creazione interfaccia utente per la selezione della tipologia e delle opzioni di stampa & \textcolor{ForestGreen}{\textit{Soddisfatto}}\\
+    	OM4 & Stesura della documentazione su quanto realizzato & \textcolor{ForestGreen}{\textit{Soddisfatto}}\\
+    	OO1 & Realizzazione di un modulo per la configurazione dei ruoli degli utenti & \textcolor{red}{\textit{Non soddisfatto}}\\
+    	OO2 & Implementazione di un migliore algoritmo di \textit{\gls{machine learning}} per la pianificazione intelligente della forza lavoro a disposizione & \textcolor{red}{\textit{Non soddisfatto}} \\
+    	\hline
+    	\rowcolor{white}
+    	\caption{Bilancio obiettivi per il progetto AWMS.}
+	\end{longtable}
+	\label{tab:bilancio-obiettivi-AWMS}
+\end{center}
+Anche nel progetto AWMS sono stati raggiunti tutti gli obiettivi minimi, ma non gli opzionali. Analogamente al progetto \DS{}, il mancato raggiungimento di tali obiettivi è dovuto alla scarsità di tempo a disposizione e alla mia poca conoscenza del prodotto completo. 
+\subsection*{Obiettivi personali}
+Dal punto di vista personale, lo stage svolto ha soddisfatto le mie aspettative. Tra gli obiettivi che mi ero posto c'era l'apprendimento di tecnologie nuove e all'avanguardia, e questo è stato pienamente raggiunto grazie ai \textit{\gls{framework}} con i quali ho lavorato. Durante il tirocinio ho avuto anche l'opportunità di interfacciarmi con grandi aziende, cosa che, oltre ad avermi riempito d'orgoglio, mi ha spronato nel lavoro e mi ha insegnato molto su come gestire il rapporto con i clienti.\\
+Era inoltre per me di primaria importanza l'apprendimento del \textit{\gls{way of working}} aziendale e dei \textit{tool} di sviluppo. Questo obiettivo purtroppo non è stato completamente raggiunto, in quanto, come descritto in §\ref{cap:descrizione-stage}, l'azienda non segue le \textit{best practice} del settore; ciononostante, da questo stage ho acquisito molte nozioni sulle problematiche scaturite da una impostazione  non ottimale del processo di sviluppo, facendone così tesoro per future esperienze professionali.
+%- tabella che indica gli obiettivi soddisfatti e non soddisfatti \\
+%- spiegazione degli obiettivi non soddisfatti\\
+%- bilancio degli obiettivi personali
 %**************************************************************
 \section{Conoscenze e competenze acquisite}
-- competenze tecniche (linguaggi di programmazione, utilizzo dei tool di lavoro)\\
-- competenze progettuali (punti di forza e limiti di alcune soluzioni rispetto ad altre)\\
-- esperienza professionale\\
+Durante il periodo di tirocinio, ho avuto modo di acquisire molte competenze di tipo tecnico. L'utilizzo di \textit{\gls{framework}} come Angular e CakePHP, che non avevo mai approcciato prima, mi hanno dato le basi per lo sviluppo di applicativi web, sia \textit{\gls{front-end}} che \textit{\gls{back-end}}, oltre che migliorare le mie capacità di sviluppo software nei rispettivi linguaggi (Javascript e PHP).\\
+Ho inoltre potuto apprendere i vantaggi nell'uso della metodologia di sviluppo Agile e l'integrazione di Scrum nel lavoro quotidiano attraversi riunioni giornaliere, valutazioni del team e progettazione di Sprint bisettimanali.\\
+Oltre alle competenze tecniche, il periodo di stage mi ha fornito anche molte competenze trasversali, permettendomi di muovermi più agevolmente nel mondo del lavoro. Ho imparato infatti a lavorare in un team, dove sia i problemi incontrati, che la possibilità di apprendimento aumentano esponenzialmente. \\
+Come detto in §\ref{sec:bilancio-obiettivi}, tuttavia, rimango un po' deluso sulle competenze riguardanti il \textit{\gls{way of working}} acquisite: avendo implementato la \textit{\gls{continuous integration}} per l'esecuzione automatica dei test, solamente in ambiente locale, non ho avuto modo di confrontare quanto la mia impostazione si avvicini ad un ambiente di sviluppo professionale e quindi di capire se l'approccio utilizzato sia quello corretto. \\
+Questo stage, inoltre, mi ha permesso di toccare con mano le problematiche legate alla carenza di attività di supporto alla codifica, confermandomi dunque l'importanza di quest'ultime in tutto il processo di sviluppo.
+%- competenze tecniche (linguaggi di programmazione, utilizzo dei tool di lavoro)\\
+%- competenze progettuali (punti di forza e limiti di alcune soluzioni rispetto ad altre)\\
+%- esperienza professionale\\
 
 \section{Valutazione personale}
-- difficile approccio con Angular in quanto javascript/typescript è stato poco trattato durante il corso accademico. Fortunatamente, l'architettura MVC mi era già nota, e questo ha facilitato un po' la comprensione del suo funzionamento\\
-- il corso accademico dovrebbe fornire agli studenti una base sugli strumenti di supporto allo sviluppo più comuni (versionamento, framework di testing, CI/CD)
+%- difficile approccio con Angular in quanto javascript/typescript è stato poco trattato durante il corso accademico. Fortunatamente, l'architettura MVC mi era già nota, e questo ha facilitato un po' la comprensione del suo funzionamento\\
+%- il corso accademico dovrebbe fornire agli studenti una base sugli strumenti di supporto allo sviluppo più comuni (versionamento, framework di testing, CI/CD)
+Questa esperienza di stage mi è stata molto utile perché mi ha concesso di toccare con mano l'ampio divario presente tra l'ambito accademico e lavorativo.\\
+Le competenze richieste nel mondo del lavoro sono infatti molte e molto variegate rispetto a quelle apprese durante gli studi: nel mio caso infatti mi sono dovuto approcciare a \textit{\gls{framework}} a me sconosciuti, come Angular e CakePHP, e a linguaggi di programmazione che, nonostante avessi già utilizzato nel progetto di Tecnologie Web, non ho mai avuto modo di approfondire.\\
+Per questa ragione, trovo che l'integrazione di alcuni corsi accademici con progetti pratici sia fondamentale per aiutare gli studenti ad approcciarsi ad una mentalità meno teorica, ma che le tecnologie da utilizzare debbano essere aggiornate, così da restare al passo con i tempi. Durante questo stage, ad esempio, ho lavorato con un \acrshort{dbms} che, nonostante fosse relazionale e pienamente compatibile con il linguaggio SQL, in certi casi utilizzava l'approccio NoSQL. Penso sia irragionevole che quest'ultimo tipo di \acrshort{dbms} non venga trattato durante il corso accademico, dato che il suo utilizzo è ormai ampiamente consolidato in ambito professionale.\\
+Un altro esempio concreto sulla necessità di rinnovo delle tecnologie trattate all'università potrebbe essere Angular: durante il tirocinio ho avuto diverse difficoltà nell'utilizzarlo al meglio, a causa della poca esperienza con il linguaggio Javascript. Quest'ultimo viene trattato, a mio avviso, in maniera troppo superficiale rispetto ai vasti ambiti nei quali questo linguaggio viene utilizzato. \\
+Infine, per quanto concerne l'attività di stage, ritengo che sia fondamentale per la crescita degli studenti e per il loro graduale inserimento nel mondo professionale.
